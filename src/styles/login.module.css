@@ -1,0 +1,54 @@
+
+.loginWrapper{
+    text-align: center;
+    margin: auto;
+    background-color: #6d9ac4;
+    height: 100vh;
+}
+
+form{   
+    margin: auto;
+    background-color: aliceblue;
+    border: 2px solid black;
+    /* height:200px; */
+    width: 40vw;
+    padding: 10px;
+    border-radius: 10px;
+       /* display: flex;
+       flex-direction: column; */
+}
+.inputContainer{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.inputContainer input{
+    width: 90%;
+    font-weight: 600;
+    font-size: larger;
+    text-align: left;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    
+}
+.inputContainer label{
+    margin-left: 25px;
+    text-align: left;
+    display: block;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.submitBtn{
+    width: 90%;
+    height: 35px;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.submitBtn:hover{
+    background-color: black;
+    color: aliceblue;
+}
