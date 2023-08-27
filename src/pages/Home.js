@@ -1,14 +1,12 @@
 // import { Link } from "react-router-dom";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import AudioRc from "../components/AudioRc";
 import CamRc from "../components/CamRc";
 import ScreenRc from "../components/ScreenRc";
 // import { useAuth } from "../hooks";
 
 const Home = () => {
-  //   const auth = useAuth();
-
-  // console.log(auth)
+  /*
   useEffect(() => {
     const handlePermission = async () => {
       navigator.permissions
@@ -32,6 +30,8 @@ const Home = () => {
     };
     handlePermission();
   }, []);
+
+  */
   return (
     <div>
       {/* <button onClick={handlePermission}>gave permission</button> */}
