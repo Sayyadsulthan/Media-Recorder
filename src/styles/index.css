@@ -64,10 +64,32 @@ video{
 .video-wrapper{
   margin-top: 20px;
   text-align: center;
+  /* border: 1px; */
+  border-top:1px solid #98a4af;
 }
 
 .show-message{
   font-weight: 600;
   font-size: large;
   text-shadow: 1px 1px silver;
+}
+
+.home-wrapper{
+  display: flex;
+  min-height: 100vh;
+  /* height: inherit; */
+}
+.home-wrapper .left-body{
+  height: inherit;
+  width: 20vw;
+  word-wrap: break-word;
+  background-color: #98a4af;
+  /* margin-right: 10px; */
+  padding-right: 5px;
+  border-right: 1px solid;
+  border-style: ridge;
+}
+
+.main-tag-container{
+  list-style: square;
 }

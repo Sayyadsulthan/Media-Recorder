@@ -32,6 +32,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<ProtectedRoute />}>
+            <Route path="/" element={<Navigate to="/home" />} />
+          </Route>
+          <Route path="/home" element={<ProtectedRoute />}>
             <Route path="/home" Component={Home} />
           </Route>
           <Route exact path="/login" Component={Login} />

@@ -1,11 +1,17 @@
 // import { Link } from "react-router-dom";
 // import { useEffect } from "react";
+import { useState } from "react";
 import AudioRc from "../components/AudioRc";
 import CamRc from "../components/CamRc";
+
 import ScreenRc from "../components/ScreenRc";
 // import { useAuth } from "../hooks";
 
 const Home = () => {
+  const [isAudio, setIsAudio] = useState(false);
+  const [isvideo, setIsVideo] = useState(false);
+  const [isScreen, setIsScreen] = useState(false);
+
   /*
   useEffect(() => {
     const handlePermission = async () => {
@@ -33,11 +39,32 @@ const Home = () => {
 
   */
   return (
-    <div>
+    <div className="home-wrapper">
       {/* <button onClick={handlePermission}>gave permission</button> */}
-      <AudioRc />
-      <CamRc />
-      <ScreenRc />
+      <div className="left-body">
+        <div>
+          <h1>Category :</h1>
+
+          <ul className="main-tag-container">
+            <li>
+              <strong onClick={() => setIsAudio(!isAudio)}>Audio Record</strong>
+            </li>
+            <li>
+              <strong onClick={() => setIsVideo(!isvideo)}>Video Record</strong>
+            </li>
+            <li>
+              <strong onClick={() => setIsScreen(!isScreen)}>
+                Screen Record
+              </strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="right-body">
+        {isAudio && <AudioRc />}
+        {isvideo && <CamRc />}
+        {isScreen && <ScreenRc />}
+      </div>
     </div>
   );
 };
