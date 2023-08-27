@@ -6,19 +6,23 @@ const ScreenRc = () => {
     useReactMediaRecorder({ screen: true });
   const [isVisible, setIsVisible] = useState(false);
 
-  if (mediaBlobUrl) {
-    setIsVisible(true);
-    localStorage.setItem(
-      "mediaTag",
-      typeof mediaBlobUrl ? mediaBlobUrl : JSON.stringify(mediaBlobUrl)
-    );
-  }
   useEffect(() => {
     let data = localStorage.getItem("mediaTag");
     if (data) {
       setIsVisible(true);
     }
   }, []);
+
+  const handleStore = async () => {
+    await mediaBlobUrl;
+    if (mediaBlobUrl) {
+      setIsVisible(true);
+      localStorage.setItem(
+        "mediaTag",
+        typeof mediaBlobUrl ? mediaBlobUrl : JSON.stringify(mediaBlobUrl)
+      );
+    }
+  };
   return (
     <div className="video-wrapper">
       <p className="show-message">
@@ -30,6 +34,7 @@ const ScreenRc = () => {
         <button
           onClick={() => {
             startRecording();
+            handleStore();
             if (error) {
               alert("Please Gave permission to record ");
             }

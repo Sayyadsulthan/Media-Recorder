@@ -6,11 +6,14 @@ const CamRc = () => {
     useReactMediaRecorder({ video: true });
   const [isVisible, setIsVisible] = useState(false);
   // if the mediabolbulr has value the set it src to local Storage
-  if (mediaBlobUrl)
-    localStorage.setItem(
-      "videoTag",
-      typeof mediaBlobUrl ? mediaBlobUrl : JSON.stringify(mediaBlobUrl)
-    );
+  const handleStore = async () => {
+    await mediaBlobUrl;
+    if (mediaBlobUrl)
+      localStorage.setItem(
+        "videoTag",
+        typeof mediaBlobUrl ? mediaBlobUrl : JSON.stringify(mediaBlobUrl)
+      );
+  };
 
   useEffect(() => {
     const data = localStorage.getItem("videoTag");
@@ -27,6 +30,7 @@ const CamRc = () => {
         <button
           onClick={() => {
             startRecording();
+            handleStore();
             if (error) {
               alert("Please Gave permission to record ");
             }

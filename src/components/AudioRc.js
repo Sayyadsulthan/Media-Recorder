@@ -6,11 +6,14 @@ const AudioRc = () => {
     useReactMediaRecorder({ audio: true });
   const [isVisible, setIsVisible] = useState(false);
   // if the mediabolbulr has value the set it src to local Storage
-  if (mediaBlobUrl)
-    localStorage.setItem(
-      "audioTag",
-      typeof mediaBlobUrl ? mediaBlobUrl : JSON.stringify(mediaBlobUrl)
-    );
+  const handleStore = async () => {
+    await mediaBlobUrl;
+    if (mediaBlobUrl)
+      localStorage.setItem(
+        "audioTag",
+        typeof mediaBlobUrl ? mediaBlobUrl : JSON.stringify(mediaBlobUrl)
+      );
+  };
 
   useEffect(() => {
     let data = localStorage.getItem("audioTag");
@@ -26,6 +29,7 @@ const AudioRc = () => {
         <button
           onClick={() => {
             stopRecording();
+            handleStore();
             if (error) {
               alert("Please Gave permission to record ");
             }
