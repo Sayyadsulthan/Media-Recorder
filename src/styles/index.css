@@ -84,7 +84,7 @@ video{
   width: 20vw;
   word-wrap: break-word;
   background-color: #98a4af;
-  /* margin-right: 10px; */
+  margin-right: 10px;
   padding-right: 5px;
   border-right: 1px solid;
   border-style: ridge;

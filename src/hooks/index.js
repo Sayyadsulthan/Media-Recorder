@@ -75,6 +75,9 @@ export const useProvideAuth = () => {
   const logout = () => {
     setLoading(true);
     window.localStorage.removeItem(LOCALSTORAGE_TOKEN_KEY);
+    window.localStorage.removeItem("videoTag");
+    window.localStorage.removeItem("audioTag");
+    window.localStorage.removeItem("mediaTag");
     setUser(null);
     setLoading(false);
   };

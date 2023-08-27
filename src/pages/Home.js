@@ -64,6 +64,12 @@ const Home = () => {
         {isAudio && <AudioRc />}
         {isvideo && <CamRc />}
         {isScreen && <ScreenRc />}
+
+        <h1>
+          {isAudio || isScreen || isvideo
+            ? ""
+            : "Nothing here. To see the result click on left category"}
+        </h1>
       </div>
     </div>
   );
