@@ -7,10 +7,12 @@ const AudioRc = () => {
 
   return (
     <section className="audio-wrapper">
+      <h1>Audio Record Section</h1>
       {/* <p className="show-message">{error && handleShowAlert}</p> */}
       <p>{status === "idle" || status === "stopped" ? "" : status}</p>
       {status === "recording" ? (
         <button
+          className="stop-btn"
           onClick={() => {
             stopRecording();
             if (error) {
@@ -22,6 +24,7 @@ const AudioRc = () => {
         </button>
       ) : (
         <button
+          className="start-btn"
           onClick={() => {
             startRecording();
             if (error) {

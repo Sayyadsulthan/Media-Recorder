@@ -7,13 +7,17 @@ const ScreenRc = () => {
 
   return (
     <div className="video-wrapper">
+      <h1>Screen Record Section</h1>
       <p className="show-message">
         {status === "idle" || status === "stopped" ? "" : status}
       </p>
       {status === "recording" ? (
-        <button onClick={stopRecording}>Stop Recording</button>
+        <button className="stop-btn" onClick={stopRecording}>
+          Stop Recording
+        </button>
       ) : (
         <button
+          className="start-btn"
           onClick={() => {
             startRecording();
             if (error) {

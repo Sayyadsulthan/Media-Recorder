@@ -7,9 +7,11 @@ const CamRc = () => {
 
   return (
     <div className="video-wrapper">
+      <h1>Video Record Section</h1>
       <p>{status === "idle" || status === "stopped" ? "" : status}</p>
       {status === "recording" ? (
         <button
+          className="stop-btn"
           onClick={() => {
             stopRecording();
           }}
@@ -18,6 +20,7 @@ const CamRc = () => {
         </button>
       ) : (
         <button
+          className="start-btn"
           onClick={() => {
             startRecording();
 
