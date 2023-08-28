@@ -192,3 +192,13 @@ video{
 .main-tag-container{
   list-style: square;
 }
+.main-tag-container li{
+  padding: 5px;
+}
+.main-tag-container li:hover{
+ cursor: pointer;
+ color: #2e353b;
+ font-size: large;
+ text-shadow: 1px 2px  #5adbff7a;
+ box-shadow: #6d9ac4 1px 1px ;
+}
